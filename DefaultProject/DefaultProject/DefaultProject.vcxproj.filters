@@ -162,6 +162,12 @@
     <ClCompile Include="Entities\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WorldManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Entities\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box2D\Collision\Shapes\b2ChainShape.h">
@@ -309,6 +315,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Entities\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

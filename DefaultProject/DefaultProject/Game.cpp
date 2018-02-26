@@ -1,9 +1,7 @@
 
 #include "Game.h"
-#include <iostream>
-#include "SFML/Graphics.hpp"
-#include "Box2D/Box2D.h"
-
+#include "WorldManager.h"
+//#include <vld.h>
 
 using namespace std;
 using namespace sf;
@@ -14,18 +12,21 @@ Game::Game()
 
 	//m_pWindow->setVerticalSyncEnabled(true);
 
-	//create world
-	
-	//create groundbox
-	
-	
-	//create rectangleshape for groundbox;
-	
+	//testing entity
+
+	m_pEntity = new Entity(32.0, { 100.0f,100.0f }, 1, true);
+	m_pPlayer = new Player(16.0f, { 250.0f, 250.0f });
 }
 
 Game::~Game()
 {
-
+	delete m_pWindow;
+	m_pWindow = nullptr;
+	delete m_pEntity;
+	m_pEntity = nullptr;
+	delete m_pPlayer;
+	m_pPlayer = nullptr;
+	
 }
 
 void Game::Run()
@@ -52,6 +53,11 @@ void Game::ProcessEvents()
 }
 void Game::Update(float deltaTime)
 {
+	
+	WorldManager::GetInstance().GetWorld()->Step(deltaTime, 1, 1);
+	
+	m_pPlayer->Update(deltaTime);
+	m_pEntity->Update(deltaTime);
 	//testing contacts
 	//for (b2Contact* c = m_pWorld->GetContactList(); c; c->GetNext())
 	//{
@@ -71,14 +77,13 @@ void Game::Update(float deltaTime)
 	//	break;
 	//}
 
-
-
-	
+	//WorldManager::GetInstance().GetWorld()->Step(deltaTime, 1, 1);
 }
 
 void Game::Draw()
 {
 	m_pWindow->clear();
-
+	m_pEntity->Draw(m_pWindow);
+	m_pPlayer->Draw(m_pWindow);
 	m_pWindow->display();
 }

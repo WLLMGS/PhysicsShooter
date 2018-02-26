@@ -18,6 +18,7 @@
 
 #include "Box2D/Collision/b2BroadPhase.h"
 
+
 b2BroadPhase::b2BroadPhase()
 {
 	m_proxyCount = 0;

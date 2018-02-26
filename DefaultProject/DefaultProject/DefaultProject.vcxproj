@@ -172,6 +172,8 @@
     <ClCompile Include="Entities\Entity.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Entities\Player.cpp" />
+    <ClCompile Include="WorldManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box2D\Box2D.h" />
@@ -223,6 +225,8 @@
     <ClInclude Include="Box2D\Rope\b2Rope.h" />
     <ClInclude Include="Entities\Entity.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Entities\Player.h" />
+    <ClInclude Include="WorldManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
