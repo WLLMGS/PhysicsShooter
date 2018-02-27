@@ -21,6 +21,7 @@ private:
 	
 	//members
 	RenderWindow* m_pWindow = nullptr;
+	View m_View;
 
 	//physics world
 	b2World* m_pWorld;

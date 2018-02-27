@@ -46,13 +46,16 @@ void Entity::Update(float elapsedSec)
 	auto pos = m_pBody->GetPosition();
 
 	m_Rectangle.setPosition(pos.x, pos.y);
-
-	
 }
 
 void Entity::Draw(RenderWindow* pWindow)
 {
 	pWindow->draw(m_Rectangle);
+}
+
+Vector2f Entity::GetPosition() const
+{
+	return m_Rectangle.getPosition();
 }
 
 Entity::~Entity()

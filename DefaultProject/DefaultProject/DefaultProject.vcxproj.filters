@@ -162,10 +162,16 @@
     <ClCompile Include="Entities\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WorldManager.cpp">
+    <ClCompile Include="Entities\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\Player.cpp">
+    <ClCompile Include="Core\TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\WorldManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -317,10 +323,16 @@
     <ClInclude Include="Entities\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WorldManager.h">
+    <ClInclude Include="Entities\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\Player.h">
+    <ClInclude Include="Core\TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\WorldManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
