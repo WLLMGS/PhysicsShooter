@@ -58,6 +58,12 @@ Vector2f Entity::GetPosition() const
 	return m_Rectangle.getPosition();
 }
 
+void Entity::SetPosition(const Vector2f& pos)
+{
+	m_pBody->SetTransform({ pos.x, pos.y }, 0.0f);
+	m_Rectangle.setPosition(pos);
+}
+
 Entity::~Entity()
 {
 }

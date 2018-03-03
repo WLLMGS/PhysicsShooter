@@ -1,10 +1,12 @@
 #include "Player.h"
 #include "../Core/TextureManager.h"
 #include "../Math.h"
+#include "../Core/WorldManager.h"
+#include "../Entities/BulletManager.h"
 
 
 Player::Player(const float halfSize, const Vector2f& pos) :
-	Entity(halfSize, pos, 1, false)
+	Entity(halfSize, pos, -1, false)
 {
 	m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(HERO_0));
 
@@ -12,15 +14,25 @@ Player::Player(const float halfSize, const Vector2f& pos) :
 
 	//set unique id for player
 	m_pBody->SetUserData((void*)id);
+
+	//init animator
+	m_Animator = new Animator(9, 3);
 }
 
 void Player::Update(float elapsedSec)
 {
 	HandleControls();
 	HandleRotation();
+	HandleAttacks();
+
+	//count down shot timer
+	m_ShotTimer -= elapsedSec;
 
 	auto pos = m_pBody->GetPosition();
 	m_Rectangle.setPosition(pos.x, pos.y);
+
+	//update animations
+	m_Animator->Update(elapsedSec);
 	
 }
 
@@ -72,8 +84,71 @@ void Player::HandleControls()
 
 void Player::HandleRotation()
 {
-	auto angle = Maths::CalculateAngle(m_Rectangle.getPosition(), m_MouseWorldPos);
-	angle = Maths::ToEuler(angle);
+	m_Angle = Maths::CalculateAngle(m_Rectangle.getPosition(), m_MouseWorldPos);
+	m_Angle = Maths::ToEuler(m_Angle);
 
-	m_Rectangle.setRotation(angle - 90.0f);
+
+	if (m_Angle > -22.5f && m_Angle < 22.5f)
+	{
+		m_Rectangle.setScale(1, 1);
+		m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(CHARACTER_SIDE));
+		m_Rectangle.setTextureRect({ 19 * m_Animator->CurrentFrame(), 0, 19, 24 });
+	}
+	else if (m_Angle < -22.5f && m_Angle > -67.5f)
+	{
+		m_Rectangle.setScale(1, 1);
+		m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(CHARACTER_DIA_UP));
+		m_Rectangle.setTextureRect({ 19 * m_Animator->CurrentFrame(), 0, 19, 24 });
+	}
+	else if (m_Angle < -67.5f && m_Angle > -112.5f)
+	{
+		m_Rectangle.setScale(1, 1);
+		m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(CHARACTER_NORTH));
+		m_Rectangle.setTextureRect({ 19 * m_Animator->CurrentFrame(), 0, 19, 24 });
+	}
+	else if(m_Angle < -112.5f && m_Angle > -157.5f)
+	{
+		m_Rectangle.setScale(-1, 1);
+		m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(CHARACTER_DIA_UP));
+		m_Rectangle.setTextureRect({ 19 * m_Animator->CurrentFrame(), 0, 19, 24 });
+	}
+	else if(m_Angle < -157.5f || m_Angle > 157.5f)
+	{
+		m_Rectangle.setScale(-1, 1);
+		m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(CHARACTER_SIDE));
+		m_Rectangle.setTextureRect({ 19 * m_Animator->CurrentFrame(), 0, 19, 24 });
+	}
+	else if (m_Angle > 112.5f && m_Angle < 157.5f)
+	{
+		m_Rectangle.setScale(-1, 1);
+		m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(CHARACTER_DIA_DOWN));
+		m_Rectangle.setTextureRect({ 19 * m_Animator->CurrentFrame(), 0, 19, 24 });
+	}
+	else if(m_Angle > 67.5f && m_Angle < 112.5f)
+	{
+		m_Rectangle.setScale(1, 1);
+		m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(CHARACTER_SOUTH));
+		m_Rectangle.setTextureRect({ 19 * m_Animator->CurrentFrame(), 0, 19, 24 });
+	}
+	else if(m_Angle > 22.5f && m_Angle < 67.5f)
+	{
+		m_Rectangle.setScale(1, 1);
+		m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(CHARACTER_DIA_DOWN));
+		m_Rectangle.setTextureRect({ 19 * m_Animator->CurrentFrame(), 0, 19, 24 });
+	}
+}
+
+void Player::HandleAttacks()
+{
+	if(m_ShotTimer < 0.0f)
+	{
+		if (Mouse::isButtonPressed(Mouse::Left))
+		{
+			m_ShotTimer = m_ShotCooldown;
+			Bullet* b = new Bullet(24.0f, m_Rectangle.getPosition(), Maths::ToRadians(m_Angle));
+
+			WorldManager::GetInstance().pBulletManager()->PushBack(b);
+		}
+	}
+
 }

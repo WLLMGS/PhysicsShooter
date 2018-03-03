@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{1D6119F6-E320-4D3C-8233-079542A975D9}</ProjectGuid>
     <RootNamespace>DefaultProject</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Animator.cpp" />
     <ClCompile Include="Box2D\Collision\b2BroadPhase.cpp" />
     <ClCompile Include="Box2D\Collision\b2CollideCircle.cpp" />
     <ClCompile Include="Box2D\Collision\b2CollideEdge.cpp" />
@@ -169,15 +170,20 @@
     <ClCompile Include="Box2D\Dynamics\Joints\b2WeldJoint.cpp" />
     <ClCompile Include="Box2D\Dynamics\Joints\b2WheelJoint.cpp" />
     <ClCompile Include="Box2D\Rope\b2Rope.cpp" />
+    <ClCompile Include="Entities\BulletManager.cpp" />
+    <ClCompile Include="Entities\Bullet.cpp" />
     <ClCompile Include="Entities\Entity.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="LevelGenerator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Entities\Player.cpp" />
     <ClCompile Include="Core\TextureManager.cpp" />
     <ClCompile Include="Core\WorldManager.cpp" />
     <ClCompile Include="Math.cpp" />
+    <ClCompile Include="Room.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Animator.h" />
     <ClInclude Include="Box2D\Box2D.h" />
     <ClInclude Include="Box2D\Collision\b2BroadPhase.h" />
     <ClInclude Include="Box2D\Collision\b2Collision.h" />
@@ -225,12 +231,16 @@
     <ClInclude Include="Box2D\Dynamics\Joints\b2WeldJoint.h" />
     <ClInclude Include="Box2D\Dynamics\Joints\b2WheelJoint.h" />
     <ClInclude Include="Box2D\Rope\b2Rope.h" />
+    <ClInclude Include="Entities\BulletManager.h" />
+    <ClInclude Include="Entities\Bullet.h" />
     <ClInclude Include="Entities\Entity.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Entities\Player.h" />
     <ClInclude Include="Core\TextureManager.h" />
     <ClInclude Include="Core\WorldManager.h" />
+    <ClInclude Include="LevelGenerator.h" />
     <ClInclude Include="Math.h" />
+    <ClInclude Include="Room.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

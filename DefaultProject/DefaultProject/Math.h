@@ -18,4 +18,10 @@ namespace Maths
 
 		return result;
 	}
+	float ToRadians(float angle)
+	{
+		float result = angle * b2_pi / 180.0f;
+
+		return result;
+	}
 }

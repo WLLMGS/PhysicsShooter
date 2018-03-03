@@ -12,6 +12,7 @@ public:
 	virtual void Update(float elapsedSec);
 	virtual void Draw(RenderWindow* pWindow);
 	Vector2f GetPosition() const;
+	void SetPosition(const Vector2f& pos);
 	~Entity();
 protected:
 	RectangleShape m_Rectangle;

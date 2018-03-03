@@ -15,11 +15,15 @@ Game::Game()
 	//testing entity
 
 	m_pEntity = new Entity(32.0f, { 100.0f,100.0f }, 1, true);
-	m_pPlayer = new Player(32.0f, { 250.0f, 250.0f });
+	m_pPlayer = new Player(16.0f, { 250.0f, 250.0f });
 
 	//init view
 	m_View.setCenter(m_pPlayer->GetPosition());
 	m_View.setSize(1080.0f, 720.0f);
+
+	//set playerpos
+	m_pPlayer->SetPosition(WorldManager::GetInstance().GetPlayerSpawnPos());
+
 }
 
 Game::~Game()
@@ -58,11 +62,12 @@ void Game::ProcessEvents()
 void Game::Update(float deltaTime)
 {
 	
-	WorldManager::GetInstance().GetWorld()->Step(deltaTime, 1, 1);
+	WorldManager::GetInstance().GetWorld()->Step(deltaTime, 6, 2);
 	
 	m_View.setCenter(m_pPlayer->GetPosition());
 	m_pPlayer->Update(deltaTime);
 	m_pEntity->Update(deltaTime);
+	WorldManager::GetInstance().Update(deltaTime);
 	//testing contacts
 	//for (b2Contact* c = m_pWorld->GetContactList(); c; c->GetNext())
 	//{
