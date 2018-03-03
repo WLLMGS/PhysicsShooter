@@ -1,15 +1,10 @@
 ﻿  Game.cpp
-d:\game projects\physicsshooter\defaultproject\defaultproject\core\worldmanager.h(41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Player.cpp
-d:\game projects\physicsshooter\defaultproject\defaultproject\core\worldmanager.h(41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Entity.cpp
-d:\game projects\physicsshooter\defaultproject\defaultproject\core\worldmanager.h(41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   WorldManager.cpp
-d:\game projects\physicsshooter\defaultproject\defaultproject\core\worldmanager.h(41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating Code...
   Compiling...
   main.cpp
-d:\game projects\physicsshooter\defaultproject\defaultproject\core\worldmanager.h(41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating Code...
   DefaultProject.vcxproj -> D:\Game Projects\PhysicsShooter\DefaultProject\Debug\DefaultProject.exe
   DefaultProject.vcxproj -> D:\Game Projects\PhysicsShooter\DefaultProject\Debug\DefaultProject.pdb (Partial PDB)
