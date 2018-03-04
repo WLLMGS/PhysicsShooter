@@ -1,6 +1,8 @@
 
 #include "Game.h"
 #include "Core/WorldManager.h"
+#include "LevelGenerator.h"
+
 //#include <vld.h>
 
 using namespace std;
@@ -22,8 +24,10 @@ Game::Game()
 	m_View.setSize(1080.0f, 720.0f);
 
 	//set playerpos
-	m_pPlayer->SetPosition(WorldManager::GetInstance().GetPlayerSpawnPos());
+	
+	m_pLevelGenerator = new LevelGenerator();
 
+	m_pPlayer->SetPosition(m_pLevelGenerator->GetPlayerSpawnPos());
 }
 
 Game::~Game()
@@ -34,7 +38,8 @@ Game::~Game()
 	m_pEntity = nullptr;
 	delete m_pPlayer;
 	m_pPlayer = nullptr;
-	
+	delete m_pLevelGenerator;
+	m_pLevelGenerator = nullptr;
 }
 
 void Game::Run()
@@ -61,12 +66,12 @@ void Game::ProcessEvents()
 }
 void Game::Update(float deltaTime)
 {
-	
-	WorldManager::GetInstance().GetWorld()->Step(deltaTime, 6, 2);
-	
 	m_View.setCenter(m_pPlayer->GetPosition());
 	m_pPlayer->Update(deltaTime);
 	m_pEntity->Update(deltaTime);
+	WorldManager::GetInstance().GetWorld()->Step(deltaTime, 6, 2);
+
+	
 	WorldManager::GetInstance().Update(deltaTime);
 	//testing contacts
 	//for (b2Contact* c = m_pWorld->GetContactList(); c; c->GetNext())
@@ -94,7 +99,10 @@ void Game::Draw()
 {
 	m_pWindow->clear();
 	m_pWindow->setView(m_View);
+	
+	m_pLevelGenerator->Draw(m_pWindow);
 	WorldManager::GetInstance().Draw(m_pWindow);
+
 	m_pEntity->Draw(m_pWindow);
 	m_pPlayer->Draw(m_pWindow);
 	m_pWindow->display();

@@ -1,6 +1,5 @@
 #include "WorldManager.h"
 #include "../Entities/BulletManager.h"
-#include "../LevelGenerator.h"
 
 WorldManager::~WorldManager()
 {
@@ -10,15 +9,13 @@ WorldManager::~WorldManager()
 	delete m_pBulletManager;
 	m_pBulletManager = nullptr;
 
-	delete m_pLevelGenerator;
-	m_pLevelGenerator = nullptr;
+	
 }
 
 void WorldManager::Draw(RenderWindow* pWindow)
 {
 	pWindow->draw(m_Background);
-	m_pLevelGenerator->Draw(pWindow);
-	m_pBulletManager->Draw(pWindow);
+		m_pBulletManager->Draw(pWindow);
 
 }
 
@@ -27,10 +24,7 @@ void WorldManager::Update(float elapsedSec)
 	m_pBulletManager->Update(elapsedSec);
 }
 
-Vector2f WorldManager::GetPlayerSpawnPos() const
-{
-	return m_pLevelGenerator->GetPlayerSpawnPos();
-}
+
 
 WorldManager::WorldManager()
 {
@@ -50,6 +44,6 @@ WorldManager::WorldManager()
 	m_Background.setTextureRect(textureRect);
 
 	m_pBulletManager = new BulletManager();
-
-	m_pLevelGenerator = new LevelGenerator();
 }
+
+

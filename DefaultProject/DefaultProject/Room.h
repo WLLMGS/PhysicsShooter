@@ -1,4 +1,5 @@
 #pragma once
+#include "../Core/WorldManager.h"
 #include "SFML/Graphics.hpp"
 #include <vector>
 
@@ -16,5 +17,12 @@ public:
 private:
 	vector<RectangleShape*> m_pTiles;
 	RectangleShape* m_pFloor;
+
+	bool m_Right = false;
+	bool m_Left = false;
+	bool m_Up = false;
+	bool m_Down = false;
+private:
+	void GenerateWalls();
 };
 

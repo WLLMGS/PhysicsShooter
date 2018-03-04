@@ -3,7 +3,7 @@
 #include "Box2D/Box2D.h"
 #include "Entities/Entity.h"
 #include "Entities/Player.h"
-
+class LevelGenerator;
 using namespace sf;
 
 class Game
@@ -29,6 +29,6 @@ private:
 	Entity* m_pEntity = nullptr;
 	Player* m_pPlayer = nullptr;
 
-
+	LevelGenerator* m_pLevelGenerator;
 };
 

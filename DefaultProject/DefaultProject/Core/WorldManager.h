@@ -6,7 +6,7 @@
 #include "TextureManager.h"
 
 class BulletManager;
-class LevelGenerator;
+
 
 using namespace std;
 using namespace sf;
@@ -28,15 +28,12 @@ public:
 
 	void Draw(RenderWindow* pWindow);
 	void Update(float elapsedSec);
-	Vector2f GetPlayerSpawnPos() const;
-
+	
 private:
 	WorldManager();
-	;
 	b2World* m_pWorld = nullptr;
 	BulletManager* m_pBulletManager = nullptr;
-	LevelGenerator* m_pLevelGenerator = nullptr;
-
+	
 private:
 	RectangleShape m_Background;
 };

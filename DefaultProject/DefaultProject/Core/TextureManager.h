@@ -16,7 +16,8 @@ enum TextureType
 	CHARACTER_NORTH = 6,
 	CHARACTER_SIDE = 7,
 	CHARACTER_SOUTH = 8,
-	FLOORTILE_2 = 9
+	FLOORTILE_2 = 9,
+	SPACESHIP_1 = 10
 };
 
 class TextureManager

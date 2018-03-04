@@ -19,6 +19,7 @@ LevelGenerator::LevelGenerator()
 		}
 		std::cout << "\n";
 	}
+
 }
 
 

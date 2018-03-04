@@ -22,12 +22,15 @@ TextureManager::TextureManager()
 	AddTexture(BULLET_0, "Resources/Bullet0.png");
 	AddTexture(TILES, "Resources/Level.png");
 	AddTexture(FLOORTILE_1, "Resources/FloorTile01.png");
+	//AddTexture(FLOORTILE_1, "Resources/Dungeon/background.png");
 	AddTexture(CHARACTER_DIA_DOWN, "Resources/2_diagdown.png");
 	AddTexture(CHARACTER_DIA_UP, "Resources/2_diagup.png");
 	AddTexture(CHARACTER_NORTH, "Resources/2_north.png");
 	AddTexture(CHARACTER_SIDE, "Resources/2_side.png");
 	AddTexture(CHARACTER_SOUTH, "Resources/2_south.png");
 	AddTexture(FLOORTILE_2, "Resources/FloorTile02.png");
+	AddTexture(SPACESHIP_1, "Resources/Space game/spritesheets/ship.png");
+
 }
 
 
