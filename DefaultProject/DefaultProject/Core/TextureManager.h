@@ -17,7 +17,12 @@ enum TextureType
 	CHARACTER_SIDE = 7,
 	CHARACTER_SOUTH = 8,
 	FLOORTILE_2 = 9,
-	SPACESHIP_1 = 10
+	SPACESHIP_1 = 10,
+	WALL_BOTTOM = 11,
+	WALL_TOP = 12,
+	WALL_RIGHT = 13,
+	WALL_LEFT = 14,
+	WALL_TOP2 = 15
 };
 
 class TextureManager

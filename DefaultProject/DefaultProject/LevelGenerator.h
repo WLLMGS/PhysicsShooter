@@ -8,6 +8,14 @@ using namespace sf;
 
 class Room;
 
+enum Direction
+{
+	NORTH,
+	SOUTH,
+	EAST,
+	WEST
+};
+
 class LevelGenerator
 {
 public:
@@ -33,10 +41,15 @@ private:
 	const float m_TileSize = 64.0f;
 
 	Vector2f m_PlayerSpawnPos;
+
+
+	RectangleShape m_Background;
 private:
 	void InitMap();
 	void GenerateSpecialRooms();
 	void ConnectRooms();
 	void MakeRooms();
+	void DetermineHallways();
+	vector<bool> CheckNeighbors(int x, int y);
 };
 

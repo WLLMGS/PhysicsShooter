@@ -173,6 +173,7 @@
     <ClCompile Include="Entities\BulletManager.cpp" />
     <ClCompile Include="Entities\Bullet.cpp" />
     <ClCompile Include="Entities\Entity.cpp" />
+    <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="LevelGenerator.cpp" />
     <ClCompile Include="main.cpp" />
@@ -234,6 +235,7 @@
     <ClInclude Include="Entities\BulletManager.h" />
     <ClInclude Include="Entities\Bullet.h" />
     <ClInclude Include="Entities\Entity.h" />
+    <ClInclude Include="EntityManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Entities\Player.h" />
     <ClInclude Include="Core\TextureManager.h" />

@@ -2,9 +2,6 @@
 #include "SFML/Graphics.hpp"
 #include "Box2D/Box2D.h"
 
-#include <iostream>
-#include "TextureManager.h"
-
 class BulletManager;
 
 
@@ -24,17 +21,13 @@ public:
 	~WorldManager();
 
 	b2World* GetWorld() { return m_pWorld; }
-	BulletManager* pBulletManager() { return m_pBulletManager; }
-
+	
 	void Draw(RenderWindow* pWindow);
 	void Update(float elapsedSec);
 	
 private:
 	WorldManager();
 	b2World* m_pWorld = nullptr;
-	BulletManager* m_pBulletManager = nullptr;
 	
-private:
-	RectangleShape m_Background;
 };
 

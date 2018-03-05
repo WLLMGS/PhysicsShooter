@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "Core/WorldManager.h"
 #include "LevelGenerator.h"
+#include "EntityManager.h"
 
 //#include <vld.h>
 
@@ -70,9 +71,9 @@ void Game::Update(float deltaTime)
 	m_pPlayer->Update(deltaTime);
 	m_pEntity->Update(deltaTime);
 	WorldManager::GetInstance().GetWorld()->Step(deltaTime, 6, 2);
-
+	EntityManager::GetInstance().Update(deltaTime);
 	
-	WorldManager::GetInstance().Update(deltaTime);
+	
 	//testing contacts
 	//for (b2Contact* c = m_pWorld->GetContactList(); c; c->GetNext())
 	//{
@@ -99,9 +100,11 @@ void Game::Draw()
 {
 	m_pWindow->clear();
 	m_pWindow->setView(m_View);
-	
+
 	m_pLevelGenerator->Draw(m_pWindow);
-	WorldManager::GetInstance().Draw(m_pWindow);
+	
+	//update entities
+	EntityManager::GetInstance().Draw(m_pWindow);
 
 	m_pEntity->Draw(m_pWindow);
 	m_pPlayer->Draw(m_pWindow);

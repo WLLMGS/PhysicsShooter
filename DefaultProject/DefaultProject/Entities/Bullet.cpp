@@ -1,5 +1,5 @@
 #include "Bullet.h"
-
+#include "../Core/TextureManager.h"
 
 Bullet::Bullet(const float size, const Vector2f& pos, const float angle) :
 Entity(size, pos, -1),

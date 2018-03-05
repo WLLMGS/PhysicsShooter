@@ -3,7 +3,7 @@
 #include "../Math.h"
 #include "../Core/WorldManager.h"
 #include "../Entities/BulletManager.h"
-
+#include "../EntityManager.h"
 
 Player::Player(const float halfSize, const Vector2f& pos) :
 	Entity(halfSize, pos, -1, false)
@@ -80,6 +80,21 @@ void Player::HandleControls()
 
 	m_pBody->SetLinearVelocity(velocity);
 
+	//dash
+	if(Mouse::isButtonPressed(Mouse::Right))
+	{
+		//do dash
+		auto direction = m_MouseWorldPos - m_Rectangle.getPosition();
+		b2Vec2 normDir;
+		normDir.x = direction.x;
+		normDir.y = direction.y;
+		normDir.Normalize();
+
+		normDir *= m_Speed * 20.f;
+
+		m_pBody->SetLinearVelocity(normDir);
+		
+	}
 
 }
 
@@ -160,7 +175,8 @@ void Player::HandleAttacks()
 			m_ShotTimer = m_ShotCooldown;
 			Bullet* b = new Bullet(24.0f, m_Rectangle.getPosition(), Maths::ToRadians(m_Angle));
 
-			WorldManager::GetInstance().pBulletManager()->PushBack(b);
+			//WorldManager::GetInstance().pBulletManager()->PushBack(b);
+			EntityManager::GetInstance().m_pBulletManager->PushBack(b);
 		}
 	}
 

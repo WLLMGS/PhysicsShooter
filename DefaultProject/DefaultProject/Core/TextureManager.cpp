@@ -30,6 +30,12 @@ TextureManager::TextureManager()
 	AddTexture(CHARACTER_SOUTH, "Resources/2_south.png");
 	AddTexture(FLOORTILE_2, "Resources/FloorTile02.png");
 	AddTexture(SPACESHIP_1, "Resources/Space game/spritesheets/ship.png");
+	AddTexture(WALL_BOTTOM, "Resources/wall_bottom.png");
+	AddTexture(WALL_TOP, "Resources/wall_top.png");
+	AddTexture(WALL_RIGHT, "Resources/wall_right.png");
+	AddTexture(WALL_LEFT, "Resources/wall_left.png");
+	AddTexture(WALL_TOP2, "Resources/wall_top2.png");
+
 
 }
 
