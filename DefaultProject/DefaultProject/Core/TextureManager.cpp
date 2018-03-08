@@ -22,7 +22,6 @@ TextureManager::TextureManager()
 	AddTexture(BULLET_0, "Resources/Bullet0.png");
 	AddTexture(TILES, "Resources/Level.png");
 	AddTexture(FLOORTILE_1, "Resources/FloorTile01.png");
-	//AddTexture(FLOORTILE_1, "Resources/Dungeon/background.png");
 	AddTexture(CHARACTER_DIA_DOWN, "Resources/2_diagdown.png");
 	AddTexture(CHARACTER_DIA_UP, "Resources/2_diagup.png");
 	AddTexture(CHARACTER_NORTH, "Resources/2_north.png");
@@ -35,6 +34,10 @@ TextureManager::TextureManager()
 	AddTexture(WALL_RIGHT, "Resources/wall_right.png");
 	AddTexture(WALL_LEFT, "Resources/wall_left.png");
 	AddTexture(WALL_TOP2, "Resources/wall_top2.png");
+	AddTexture(WALL_TOP_LEFT, "Resources/corner_left_up.png");
+	AddTexture(WALL_TOP_RIGHT, "Resources/corner_right_up.png");
+	AddTexture(WALL_DOWN_LEFT, "Resources/corner_left_down.png");
+	AddTexture(WALL_DOWN_RIGHT, "Resources/corner_right_down.png");
 
 
 }

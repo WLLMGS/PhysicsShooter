@@ -8,7 +8,7 @@
 Player::Player(const float halfSize, const Vector2f& pos) :
 	Entity(halfSize, pos, -1, false)
 {
-	m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(SPACESHIP_1));
+	m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(CHARACTER_DIA_DOWN));
 	m_Rectangle.setTextureRect({ 0,0,16,24 });
 	int id = 2;
 
@@ -16,7 +16,7 @@ Player::Player(const float halfSize, const Vector2f& pos) :
 	m_pBody->SetUserData((void*)id);
 
 	//init animator
-	m_Animator = new Animator(4, 2);
+	m_Animator = new Animator(6, 3);
 
 }
 
@@ -104,7 +104,7 @@ void Player::HandleRotation()
 	m_Angle = Maths::ToEuler(m_Angle);
 
 
-	m_Rectangle.setRotation(m_Angle + 90.0f);
+	/*m_Rectangle.setRotation(m_Angle + 90.0f);
 
 	switch (m_Animator->CurrentFrame())
 	{
@@ -114,9 +114,9 @@ void Player::HandleRotation()
 	case 1:
 		m_Rectangle.setTextureRect({ 0,24,16,24 });
 		break;
-	}
+	}*/
 
-	/*if (m_Angle > -22.5f && m_Angle < 22.5f)
+	if (m_Angle > -22.5f && m_Angle < 22.5f)
 	{
 		m_Rectangle.setScale(1, 1);
 		m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(CHARACTER_SIDE));
@@ -163,7 +163,7 @@ void Player::HandleRotation()
 		m_Rectangle.setScale(1, 1);
 		m_Rectangle.setTexture(TextureManager::GetInstance().GetTexture(CHARACTER_DIA_DOWN));
 		m_Rectangle.setTextureRect({ 19 * m_Animator->CurrentFrame(), 0, 19, 24 });
-	}*/
+	}
 }
 
 void Player::HandleAttacks()

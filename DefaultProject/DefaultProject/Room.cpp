@@ -354,6 +354,31 @@ void Room::GenerateWalls()
 		fDef.shape = &shape;
 
 		body->CreateFixture(&fDef);
+
+
+		//adding corner up
+		pos = m_pFloor->getPosition();
+		pos.x = pos.x - m_pFloor->getSize().x / 2.0f;
+		pos.y = pos.y - m_pFloor->getSize().y / 2.0f;
+
+		wall = new RectangleShape();
+		wall->setSize({ m_TileSize, m_TileSize });
+		wall->setPosition(pos);
+		wall->setTexture(TextureManager::GetInstance().GetTexture(WALL_TOP_LEFT));
+		
+		m_pTiles.push_back(wall);
+
+		//adding corner left down
+		pos = m_pFloor->getPosition();
+		pos.x = pos.x - m_pFloor->getSize().x / 2.0f;
+		pos.y = pos.y + m_pFloor->getSize().y / 2.0f;
+
+		wall = new RectangleShape();
+		wall->setSize({ m_TileSize, m_TileSize });
+		wall->setPosition(pos);
+		wall->setTexture(TextureManager::GetInstance().GetTexture(WALL_DOWN_LEFT));
+
+		m_pTiles.push_back(wall);
 	}
 	else
 	{
@@ -428,6 +453,30 @@ void Room::GenerateWalls()
 		body2->CreateFixture(&fDef2);
 
 
+		//adding corner
+		pos = m_pFloor->getPosition();
+		pos.x = pos.x - m_pFloor->getSize().x / 2.0f;
+		pos.y = pos.y - m_pFloor->getSize().y / 2.0f;
+
+		wall = new RectangleShape();
+		wall->setSize({ m_TileSize, m_TileSize });
+		wall->setPosition(pos);
+		wall->setTexture(TextureManager::GetInstance().GetTexture(WALL_TOP_LEFT));
+
+		m_pTiles.push_back(wall);
+
+		//adding corner left down
+		pos = m_pFloor->getPosition();
+		pos.x = pos.x - m_pFloor->getSize().x / 2.0f;
+		pos.y = pos.y + m_pFloor->getSize().y / 2.0f;
+
+		wall = new RectangleShape();
+		wall->setSize({ m_TileSize, m_TileSize });
+		wall->setPosition(pos);
+		wall->setTexture(TextureManager::GetInstance().GetTexture(WALL_DOWN_LEFT));
+
+		m_pTiles.push_back(wall);
+
 	}
 
 	if(!m_Right)
@@ -465,6 +514,33 @@ void Room::GenerateWalls()
 		fDef.shape = &shape;
 
 		body->CreateFixture(&fDef);
+
+		//corner
+		pos = m_pFloor->getPosition();
+		pos.x = pos.x + m_pFloor->getSize().x / 2.0f;
+		pos.y = pos.y - m_pFloor->getSize().y / 2.0f;
+
+
+		wall = new RectangleShape();
+		wall->setSize({ m_TileSize, m_TileSize });
+		wall->setPosition(pos);
+		wall->setTexture(TextureManager::GetInstance().GetTexture(WALL_TOP_RIGHT));
+
+		m_pTiles.push_back(wall);
+
+		//corner down
+		pos = m_pFloor->getPosition();
+		pos.x = pos.x + m_pFloor->getSize().x / 2.0f;
+		pos.y = pos.y + m_pFloor->getSize().y / 2.0f;
+
+
+		wall = new RectangleShape();
+		wall->setSize({ m_TileSize, m_TileSize });
+		wall->setPosition(pos);
+		wall->setTexture(TextureManager::GetInstance().GetTexture(WALL_DOWN_RIGHT));
+
+		m_pTiles.push_back(wall);
+
 	}
 	else
 	{
@@ -539,6 +615,30 @@ void Room::GenerateWalls()
 
 		body2->CreateFixture(&fDef2);
 
+		//add corner
+		pos = m_pFloor->getPosition();
+		pos.x = pos.x + m_pFloor->getSize().x / 2.0f ;
+		pos.y = pos.y - m_pFloor->getSize().y / 2.0f;
 
+
+		wall = new RectangleShape();
+		wall->setSize({ m_TileSize, m_TileSize });
+		wall->setPosition(pos);
+		wall->setTexture(TextureManager::GetInstance().GetTexture(WALL_TOP_RIGHT));
+
+		m_pTiles.push_back(wall);
+
+		//corner down
+		pos = m_pFloor->getPosition();
+		pos.x = pos.x + m_pFloor->getSize().x / 2.0f;
+		pos.y = pos.y + m_pFloor->getSize().y / 2.0f;
+
+
+		wall = new RectangleShape();
+		wall->setSize({ m_TileSize, m_TileSize });
+		wall->setPosition(pos);
+		wall->setTexture(TextureManager::GetInstance().GetTexture(WALL_DOWN_RIGHT));
+
+		m_pTiles.push_back(wall);
 	}
 }

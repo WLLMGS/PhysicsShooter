@@ -1,65 +1,7 @@
-﻿  b2BroadPhase.cpp
-  b2CollideCircle.cpp
-  b2CollideEdge.cpp
-  b2CollidePolygon.cpp
-  b2Collision.cpp
-  b2Distance.cpp
-  b2DynamicTree.cpp
-  b2TimeOfImpact.cpp
-  b2ChainShape.cpp
-  b2CircleShape.cpp
-  b2EdgeShape.cpp
-  b2PolygonShape.cpp
-  b2BlockAllocator.cpp
-  b2Draw.cpp
-  b2Math.cpp
-  b2Settings.cpp
-  b2StackAllocator.cpp
-  b2Timer.cpp
-  b2Body.cpp
-  b2ContactManager.cpp
-  Compiling...
-  b2Fixture.cpp
-  b2Island.cpp
-  b2World.cpp
-  b2WorldCallbacks.cpp
-  b2ChainAndCircleContact.cpp
-  b2ChainAndPolygonContact.cpp
-  b2CircleContact.cpp
-  b2Contact.cpp
-  b2ContactSolver.cpp
-  b2EdgeAndCircleContact.cpp
-  b2EdgeAndPolygonContact.cpp
-  b2PolygonAndCircleContact.cpp
-  b2PolygonContact.cpp
-  b2DistanceJoint.cpp
-  b2FrictionJoint.cpp
-  b2GearJoint.cpp
-  b2Joint.cpp
-  b2MotorJoint.cpp
-  b2MouseJoint.cpp
-  b2PrismaticJoint.cpp
-  Compiling...
-  b2PulleyJoint.cpp
-  b2RevoluteJoint.cpp
-  b2RopeJoint.cpp
-  b2WeldJoint.cpp
-  b2WheelJoint.cpp
-  b2Rope.cpp
-  BulletManager.cpp
-Entities\BulletManager.cpp(21): warning C4018: '<': signed/unsigned mismatch
-Entities\BulletManager.cpp(29): warning C4018: '<': signed/unsigned mismatch
-  Bullet.cpp
-  Entity.cpp
-  Game.cpp
-  main.cpp
-  Player.cpp
-  TextureManager.cpp
-  WorldManager.cpp
-  Math.cpp
+﻿  Player.cpp
   Generating code
-  713 of 715 functions (99.7%) were compiled, the rest were copied from previous compilation.
-    326 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  0 of 1044 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    8 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  DefaultProject.vcxproj -> C:\Users\Willem\Documents\GitHub\PhysicsShooter\DefaultProject\Release\DefaultProject.exe
+  DefaultProject.vcxproj -> D:\Game Projects\PhysicsShooter\DefaultProject\Release\DefaultProject.exe

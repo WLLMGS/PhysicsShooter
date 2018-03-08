@@ -22,7 +22,11 @@ enum TextureType
 	WALL_TOP = 12,
 	WALL_RIGHT = 13,
 	WALL_LEFT = 14,
-	WALL_TOP2 = 15
+	WALL_TOP2 = 15,
+	WALL_TOP_LEFT = 16,
+	WALL_TOP_RIGHT = 17,
+	WALL_DOWN_LEFT = 18,
+	WALL_DOWN_RIGHT = 19
 };
 
 class TextureManager
